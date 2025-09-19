@@ -354,8 +354,8 @@
       margin: 1rem auto;   /* 自动居中 */
       box-shadow: 0 2px 3px rgba(10, 10, 10, .1);
       border-radius: 6px;
-      width: 75%;          /* 占网页 80% 宽度 */
-      max-width: 75%;      /* 防止超出 */
+      width: 80%;          /* 占网页 80% 宽度 */
+      max-width: 80%;      /* 防止超出 */
     }
 
     .dataset-table {
@@ -535,6 +535,248 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="cool-title title is-3">Experimental Results</h2>
+
+  <div class="hero-body">
+    <div class="container">
+      <h3 class="title is-4" style="margin-left: 130px;">&#x25B6; Grounding Capability</h3>
+
+  <!-- Screenspot-Pro Results Table -->
+  <p class="has-text-centered is-size-5 has-text-weight-medium mb-4">
+    Results on Screenspot-Pro benchmark.
+  </p>
+
+  <div class="dataset-table-container">
+    <table class="dataset-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Model</th>
+          <th colspan="2">CAD</th>
+          <th colspan="2">DEV</th>
+          <th colspan="2">Creative</th>
+          <th colspan="2">Scientific</th>
+          <th colspan="2">Office</th>
+          <th colspan="2">OS</th>
+          <th colspan="3">Avg</th>
+        </tr>
+        <tr>
+          <th>Text</th><th>Icon</th>
+          <th>Text</th><th>Icon</th>
+          <th>Text</th><th>Icon</th>
+          <th>Text</th><th>Icon</th>
+          <th>Text</th><th>Icon</th>
+          <th>Text</th><th>Icon</th>
+          <th>Text</th><th>Icon</th><th>Avg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-4o</td>
+          <td>2.0</td><td>0.0</td>
+          <td>1.3</td><td>0.0</td>
+          <td>1.0</td><td>0.0</td>
+          <td>2.1</td><td>0.0</td>
+          <td>1.1</td><td>0.0</td>
+          <td>0.0</td><td>0.0</td>
+          <td>1.3</td><td>0.0</td><td>0.8</td>
+        </tr>
+        <tr>
+          <td>SeeClick-9.6B</td>
+          <td>2.5</td><td>0.0</td>
+          <td>0.6</td><td>0.0</td>
+          <td>1.0</td><td>0.0</td>
+          <td>3.5</td><td>0.0</td>
+          <td>1.1</td><td>0.0</td>
+          <td>2.8</td><td>0.0</td>
+          <td>1.8</td><td>0.0</td><td>1.1</td>
+        </tr>
+        <tr>
+          <td>OA-Atlas-7B</td>
+          <td>12.2</td><td>4.7</td>
+          <td>33.1</td><td>1.4</td>
+          <td>28.8</td><td>2.8</td>
+          <td>37.5</td><td>7.3</td>
+          <td>33.9</td><td>5.7</td>
+          <td>27.1</td><td>4.5</td>
+          <td>28.1</td><td>4.0</td><td>18.9</td>
+        </tr>
+        <tr>
+          <td>UGground-7B</td>
+          <td>14.2</td><td>1.6</td>
+          <td>26.6</td><td>2.1</td>
+          <td>27.3</td><td>2.8</td>
+          <td>31.9</td><td>2.7</td>
+          <td>31.6</td><td>11.3</td>
+          <td>17.8</td><td>0.0</td>
+          <td>25.0</td><td>2.8</td><td>16.5</td>
+        </tr>
+        <tr>
+          <td>UI-TARS-1.5-7B</td>
+          <td>20.8</td><td>9.4</td>
+          <td>58.4</td><td>12.4</td>
+          <td>50.0</td><td>9.1</td>
+          <td>63.9</td><td>31.8</td>
+          <td>63.3</td><td>20.8</td>
+          <td>30.8</td><td>16.9</td>
+          <td>47.8</td><td>16.2</td><td>35.7</td>
+        </tr>
+        <tr>
+          <td>Qwen2.5-VL-7B</td>
+          <td>17.2</td><td>3.1</td>
+          <td>35.1</td><td>2.1</td>
+          <td>23.2</td><td>6.3</td>
+          <td>36.1</td><td>6.4</td>
+          <td>41.8</td><td>11.3</td>
+          <td>28.0</td><td>13.5</td>
+          <td>29.7</td><td>6.5</td><td>20.8</td>
+        </tr>
+        <tr class="highlight">
+          <td>GUI-ReWalk-7B (ours)</td>
+          <td>35.0</td><td>17.9</td>
+          <td>46.8</td><td>11.0</td>
+          <td>40.9</td><td>9.8</td>
+          <td>60.4</td><td>28.2</td>
+          <td>56.5</td><td>28.3</td>
+          <td>39.2</td><td>19.1</td>
+          <td>46.2</td><td>17.2</td><td>35.1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- OS-World-G Results Table -->
+  <p class="has-text-centered is-size-5 has-text-weight-medium mb-4">
+    Results on OS-World-G benchmark.
+  </p>
+
+  <div class="dataset-table-container">
+    <table class="dataset-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Text Matching</th>
+          <th>Element Recognition</th>
+          <th>Layout Understanding</th>
+          <th>Fine-grained Manipulation</th>
+          <th>Refusal</th>
+          <th>Avg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UGground-7B</td>
+          <td>51.3</td>
+          <td>40.3</td>
+          <td>43.5</td>
+          <td>24.8</td>
+          <td>-</td>
+          <td>36.4</td>
+        </tr>
+        <tr>
+          <td>UI-TARS-1.5-7B</td>
+          <td>60.2</td>
+          <td>51.8</td>
+          <td>54.9</td>
+          <td>35.6</td>
+          <td>-</td>
+          <td>47.5</td>
+        </tr>
+        <tr>
+          <td>Qwen2.5-VL-7B</td>
+          <td>23.0</td>
+          <td>15.5</td>
+          <td>19.0</td>
+          <td>11.4</td>
+          <td>-</td>
+          <td>16.8</td>
+        </tr>
+        <tr class="highlight">
+          <td>GUI-ReWalk-7B (ours)</td>
+          <td>35.2</td>
+          <td>30.0</td>
+          <td>31.2</td>
+          <td>16.1</td>
+          <td>-</td>
+          <td>27.5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <h3 class="title is-4" style="margin-left: 130px;">&#x25B6; Navigation Capability</h3>
+
+  <p class="has-text-centered is-size-5 has-text-weight-medium mb-4">
+  Results on AndroidControl and GUI-Odyssey benchmarks.
+  </p>
+
+  <div class="dataset-table-container">
+    <table class="dataset-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Model</th>
+          <th colspan="2">AndroidControl-Low</th>
+          <th colspan="2">AndroidControl-High</th>
+          <th colspan="2">GUI-Odyssey</th>
+        </tr>
+        <tr>
+          <th>Type Acc.</th>
+          <th>SR</th>
+          <th>Type Acc.</th>
+          <th>SR</th>
+          <th>Type Acc.</th>
+          <th>SR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-4o <span class="citation">[OpenAI, 2024]</span></td>
+          <td>74.3</td><td>19.4</td>
+          <td>66.3</td><td>20.8</td>
+          <td>34.3</td><td>3.3</td>
+        </tr>
+        <tr>
+          <td>SeeClick-9.6B <span class="citation">[Cheng et al., 2024]</span></td>
+          <td>93.0</td><td>75.0</td>
+          <td>82.9</td><td>59.1</td>
+          <td>71.0</td><td>53.9</td>
+        </tr>
+        <tr>
+          <td>OS-Atlas-7B <span class="citation">[Wu et al., 2024]</span></td>
+          <td>93.6</td><td>85.2</td>
+          <td>85.2</td><td>71.2</td>
+          <td>84.5</td><td>62.0</td>
+        </tr>
+        <tr>
+          <td>OS-Genesis-7B</td>
+          <td>90.7</td><td>74.2</td>
+          <td>66.2</td><td>44.5</td>
+          <td>--</td><td>--</td>
+        </tr>
+        <tr>
+          <td>Qwen2.5-VL-7B <span class="citation">[Bai et al., 2025]</span></td>
+          <td>91.8</td><td>85.0</td>
+          <td>70.9</td><td>69.8</td>
+          <td>59.5</td><td>46.3</td>
+        </tr>
+        <tr class="highlight">
+          <td><b>GUI-ReWalk-7B (ours)</b></td>
+          <td>91.7</td><td>96.3</td>
+          <td>73.1</td><td>66.2</td>
+          <td>69.6</td><td>64.2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content is-small" style="margin-left: 130px;">
+      <p><strong>Notes:</strong></p>
+      <ul>
+        <li>Type Acc.: Type Accuracy</li>
+        <li>Step SR: Step Success Rate</li>
+      </ul>
+    </div>
+  </div>
 
 </section>
 <!-- End Experimental Results -->
